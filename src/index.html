@@ -16,7 +16,7 @@
   </head>
   <body class="bg-red-50 font-poppins">
     <div
-      class="container w-2/5 mx-auto p-8 bg-white rounded-2xl my-52 shadow-lg relative"
+      class="container w-2/5 mx-auto p-8 bg-white rounded-br-[150px]  my-30 shadow-lg relative"
     >
       <form id="myForm" class="flex items-center gap-6 mb-8">
         <div class="flex flex-col gap-2">
@@ -25,9 +25,11 @@
             type="text"
             id="day"
             placeholder="DD"
-            class="p-3 w-24 rounded-xl text-xl border-1 border-blue-100 text-gray-500 placeholder:text-gray-500 placeholder:font-bold"
+            maxlength="2"
+            autocomplete="off"
+            class="p-3 w-24 rounded-xl text-2xl border-1 border-blue-100 text-black font-black focus:outline-none placeholder:text-gray-500 placeholder:font-bold"
           />
-          <small class="error-text">This field is required</small>
+          <small class="error-day"></small>
         </div>
         <div class="flex flex-col gap-2">
           <label for="day" class="font-bold text-sm text-gray-500">MONTH</label>
@@ -35,9 +37,11 @@
             type="text"
             id="day"
             placeholder="MM"
-            class="p-3 w-24 rounded-xl text-xl border-1 border-blue-100 text-gray-500 placeholder:text-gray-500 placeholder:font-bold"
+            maxlength="2"
+            autocomplete="off"
+            class="p-3 w-24 rounded-xl text-2xl border-1 border-blue-100 text-black font-black focus:outline-none placeholder:text-gray-500 placeholder:font-bold"
           />
-          <small class="error-text">This field is required</small>
+          <small class="error-month"></small>
         </div>
         <div class="flex flex-col gap-2">
           <label for="day" class="font-bold text-sm text-gray-500">YEAR</label>
@@ -45,11 +49,13 @@
             type="text"
             id="day"
             placeholder="YYYY"
-            class="p-3 w-24 rounded-xl text-xl border-1 border-blue-100 text-gray-500 placeholder:text-gray-500 placeholder:font-bold"
+            maxlength="4"
+            autocomplete="off"
+            class="p-3 w-24 rounded-xl text-2xl border-1 border-blue-100 text-black focus:outline-none font-black placeholder:text-gray-500 placeholder:font-bold"
           />
-          <small class="error-text">This field is required</small>
+          <small class="error-year"></small>
         </div>
-        <button>
+        <button id="submitBtn" type="submit">
           <img
             src="../assets/images/icon-arrow.svg"
             class="mt-8 cursor-pointer bg-purple-500 p-2 rounded-full text-4xl absolute right-8 top-26"
@@ -61,15 +67,15 @@
 
       <hr class="border-1 border-gray-300 h-px w-[90%]" />
 
-      <div
-        class="result mt-10 text-6xl font-extrabold text-black flex flex-cols gap-8"
+      <section
+        class="result mt-5 text-7xl font-extrabold text-black"
       >
-        <div><strong id="result-day"> --</strong> years</div>
-        <div><strong id="result-month">--</strong> months</div>
-        <div><strong id="result-year">--</strong> days</div>
+        <div><strong id="result-day" class="text-purple-500"> --</strong> years</div>
+        <div><strong id="result-month" class="text-purple-500">--</strong> months</div>
+        <div><strong id="result-year" class="text-purple-500">--</strong> days</div>
       </div>
-    </div>
+    </section>
 
-    <script src="script.js"></script>
+    <script src="./script.js"></script>
   </body>
 </html>
