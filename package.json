@@ -1,0 +1,18 @@
+{
+  "dependencies": {
+    "@tailwindcss/cli": "^4.1.13",
+    "tailwindcss": "^4.1.13"
+  },
+  "name": "age-calculator",
+  "version": "1.0.0",
+  "description": "![Design preview for the Age calculator app coding challenge](preview.jpg)",
+  "main": "script.js",
+  "devDependencies": {},
+  "scripts": {
+    "build": "tailwindcss -i ./src/input.css -o ./src/style.css --watch"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs"
+}
