@@ -15,7 +15,7 @@ const errorYear = document.querySelector(".error-year");
 const labelDay = document.querySelector("label[for='day']");
 const labelMonth = document.querySelector("label[for='month']");
 const labelYear = document.querySelector("label[for='year']");
-
+const regex = /^[0-9]+$/;
 //validate day input field
 function validateDay() {
   if (day.value === "") {
@@ -28,6 +28,11 @@ function validateDay() {
     labelDay.classList.add("text-red-500");
     day.classList.add("border-red-500");
     errorDay.classList.add("text-red-500");
+  } else if (!regex.test(day.value)) {
+    errorDay.innerText = "Must be a number";
+    labelDay.classList.add("text-red-500");
+    day.classList.add("border-red-500");
+    errorDay.classList.add("text-red-500");
   } else {
     errorDay.innerText = "";
     labelDay.classList.remove("text-red-500");
@@ -36,7 +41,7 @@ function validateDay() {
 }
 day.addEventListener("input", validateDay);
 
-//validate month input field 
+//validate month input field
 function validateMonth() {
   if (month.value === "") {
     errorMonth.innerText = "This field is required";
@@ -45,6 +50,11 @@ function validateMonth() {
     errorMonth.classList.add("text-red-500");
   } else if (month.value < 1 || month.value > 12) {
     errorMonth.innerText = "Must be a valid month";
+    labelMonth.classList.add("text-red-500");
+    month.classList.add("border-red-500");
+    errorMonth.classList.add("text-red-500");
+  } else if (!regex.test(month.value)) {
+    errorMonth.innerText = "Must be a number";
     labelMonth.classList.add("text-red-500");
     month.classList.add("border-red-500");
     errorMonth.classList.add("text-red-500");
@@ -69,6 +79,11 @@ function validateYear() {
     labelYear.classList.add("text-red-500");
     year.classList.add("border-red-500");
     errorYear.classList.add("text-red-500");
+  } else if (!regex.test(year.value)) {
+    errorYear.innerText = "Must be a number";
+    labelYear.classList.add("text-red-500");
+    year.classList.add("border-red-500");
+    errorYear.classList.add("text-red-500");
   } else {
     errorYear.innerText = "";
     labelYear.classList.remove("text-red-500");
@@ -76,7 +91,6 @@ function validateYear() {
   }
 }
 year.addEventListener("input", validateYear);
-
 
 function handleSubmit(e) {
   e.preventDefault();
