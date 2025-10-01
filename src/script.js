@@ -95,7 +95,7 @@ year.addEventListener("input", validateYear);
 function handleSubmit(e) {
   e.preventDefault();
   if (day.value === "" || month.value === "" || year.value === "") {
-    alert("Please input are required");
+    alert("Please one of those input day,month and year are empty");
   } else {
     let current = new Date();
     let birthDate = new Date(`${year.value}-${month.value}-${day.value}`);
