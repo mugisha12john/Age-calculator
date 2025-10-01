@@ -14,67 +14,63 @@
     <link rel="stylesheet" href="./style.css" />
     <title>Frontend Mentor | Age calculator app</title>
   </head>
-  <body class="bg-red-50 font-poppins">
+  <body class="bg-red-50">
     <div
-      class="container w-2/5 mx-auto p-8 bg-white rounded-br-[150px]  my-30 shadow-lg relative"
+      class="container w-11/12 max-w-2xl mx-auto p-4 md:p-8 bg-white rounded-br-[75px] md:rounded-br-[150px] my-8 md:my-30 shadow-lg relative"
     >
-      <form id="myForm" class="flex items-center gap-6 mb-8">
-        <div class="flex flex-col gap-2">
-          <label for="day" class="font-bold text-sm text-gray-500">DAY</label>
+      <form id="myForm" class="flex flex-col sm:flex-row items-start sm:items-center gap-4 sm:gap-6 mb-6 sm:mb-8">
+        <div class="flex flex-col gap-2 w-full sm:w-auto">
+          <label for="day" class="font-bold text-xs sm:text-sm text-gray-500">DAY</label>
           <input
             type="text"
             id="day"
             placeholder="DD"
             maxlength="2"
             autocomplete="off"
-            class="p-3 w-24 rounded-xl text-2xl border-1 border-blue-100 text-black font-black focus:outline-none placeholder:text-gray-500 placeholder:font-bold"
+            class="p-3 w-full sm:w-20 md:w-24 rounded-xl text-lg sm:text-2xl border-1 border-blue-100 text-black font-black focus:outline-none placeholder:text-gray-500 placeholder:font-bold"
           />
-          <small class="error-day"></small>
+          <small class="error-day text-xs text-red-500"></small>
         </div>
-        <div class="flex flex-col gap-2">
-          <label for="month" class="font-bold text-sm text-gray-500">MONTH</label>
+        <div class="flex flex-col gap-2 w-full sm:w-auto">
+          <label for="month" class="font-bold text-xs sm:text-sm text-gray-500">MONTH</label>
           <input
             type="text"
             id="month"
             placeholder="MM"
             maxlength="2"
             autocomplete="off"
-            class="p-3 w-24 rounded-xl text-2xl border-1 border-blue-100 text-black font-black focus:outline-none placeholder:text-gray-500 placeholder:font-bold"
+            class="p-3 w-full sm:w-20 md:w-24 rounded-xl text-lg sm:text-2xl border-1 border-blue-100 text-black font-black focus:outline-none placeholder:text-gray-500 placeholder:font-bold"
           />
-          <small class="error-month"></small>
+          <small class="error-month text-xs text-red-500"></small>
         </div>
-        <div class="flex flex-col gap-2">
-          <label for="year" class="font-bold text-sm text-gray-500">YEAR</label>
+        <div class="flex flex-col gap-2 w-full sm:w-auto">
+          <label for="year" class="font-bold text-xs sm:text-sm text-gray-500">YEAR</label>
           <input
             type="text"
             id="year"
             placeholder="YYYY"
             maxlength="4"
             autocomplete="off"
-            class="p-3 w-24 rounded-xl text-2xl border-1 border-blue-100 text-black focus:outline-none font-black placeholder:text-gray-500 placeholder:font-bold"
+            class="p-3 w-full sm:w-24 md:w-28 rounded-xl text-lg sm:text-2xl border-1 border-blue-100 text-black focus:outline-none font-black placeholder:text-gray-500 placeholder:font-bold"
           />
-          <small class="error-year"></small>
+          <small class="error-year text-xs text-red-500"></small>
         </div>
-        <button id="submitBtn" type="submit">
+        <button id="submitBtn" type="submit" class="w-full sm:w-auto flex justify-center sm:justify-end mt-4 sm:mt-0 sm:ml-auto">
           <img
             src="../assets/images/icon-arrow.svg"
-            class="mt-8 cursor-pointer bg-purple-500 p-2 rounded-full text-4xl absolute right-8 top-26"
-            alt=""
-            srcset=""
+            class="cursor-pointer bg-purple-500 p-3 sm:p-4 rounded-full w-12 h-12  sm:w-16 sm:h-16 hover:brightness-110"
+            alt="Calculate age"
           />
         </button>
       </form>
 
-      <hr class="border-1 border-gray-300 h-px w-[90%]" />
+      <hr class="border-1 border-gray-300 h-px w-full my-4 sm:my-6" />
 
-      <section
-        class="result mt-5 text-7xl font-extrabold text-black"
-      >
-        <div><strong id="result-year" class="text-purple-500"> --</strong> years</div>
+      <section class="result mt-4 sm:mt-6 text-4xl sm:text-6xl md:text-7xl font-extrabold text-black leading-tight">
+        <div><strong id="result-year" class="text-purple-500">--</strong> years</div>
         <div><strong id="result-month" class="text-purple-500">--</strong> months</div>
         <div><strong id="result-day" class="text-purple-500">--</strong> days</div>
-      </div>
-    </section>
+      </section>
 
     <script src="./script.js"></script>
   </body>

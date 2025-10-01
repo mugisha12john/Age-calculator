@@ -94,22 +94,26 @@ year.addEventListener("input", validateYear);
 
 function handleSubmit(e) {
   e.preventDefault();
-  let current = new Date();
-  let birthDate = new Date(`${year.value}-${month.value}-${day.value}`);
-  let years = current.getFullYear() - birthDate.getFullYear();
-  let months = current.getMonth() - birthDate.getMonth();
-  let days = current.getDate() - birthDate.getDate();
-  if (months < 0 || (months === 0 && days < 0)) {
-    years--;
-    months += 12;
+  if (day.value === "" || month.value === "" || year.value === "") {
+    alert("Please input are required");
+  } else {
+    let current = new Date();
+    let birthDate = new Date(`${year.value}-${month.value}-${day.value}`);
+    let years = current.getFullYear() - birthDate.getFullYear();
+    let months = current.getMonth() - birthDate.getMonth();
+    let days = current.getDate() - birthDate.getDate();
+    if (months < 0 || (months === 0 && days < 0)) {
+      years--;
+      months += 12;
+    }
+    if (days < 0) {
+      const prevMonth = new Date(current.getFullYear(), current.getMonth(), 0);
+      days += prevMonth.getDate();
+      months--;
+    }
+    resultDay.innerText = days;
+    resultMonth.innerText = months;
+    resultYear.innerText = years;
   }
-  if (days < 0) {
-    const prevMonth = new Date(current.getFullYear(), current.getMonth(), 0);
-    days += prevMonth.getDate();
-    months--;
-  }
-  resultDay.innerText = days;
-  resultMonth.innerText = months;
-  resultYear.innerText = years;
 }
 submitBtn.addEventListener("click", handleSubmit);
